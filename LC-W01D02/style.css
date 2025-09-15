@@ -1,0 +1,64 @@
+/* syntax */
+/* ID    | Class    | Tag/Elements */
+h1 {
+  color: orange;
+  /* property: value
+  declaration
+  */
+}
+
+/* 
+DN - Selector ID | #
+
+Property ???
+
+Value ???
+
+Result I need the text to be centered
+Ctrl + /
+*/
+
+#par-1 {
+  /* color: blue; */
+  text-align: center;
+}
+
+/* 
+DN - Selector multiple elemnt 
+without using the elemnts
+
+Property ???
+Value ???
+
+Result I need two parpag to BOLD
+
+*/
+.bold {
+  /* color: brown; */
+  font-weight: bold;
+}
+
+/* HW: Select attributes - html */
+
+/* Flexbox VS Grid */
+/*  */
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 
+Pri
+ 1 - You Do: CSS Practice
+ https://git.generalassemb.ly/Jordan-Modee/intro-to-css?tab=readme-ov-file#-you-do--css-practice
+
+
+ 2 - Games
+
+3 - Practice inside the explanation
+
+4- extra from the team
+
+
+*/
