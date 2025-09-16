@@ -139,7 +139,7 @@ Extend your Comment Board into a To-Do list with full interactivity:
 
 ## 📝 Deliverables
 
-- A working interactive web page hosted in Replit.
+- A working interactive web page hosted in Replit or uploaded to GitHub as Files.
 - Students should be able to demonstrate:
   - DOM element selection and manipulation.
   - Event-driven interactivity.
