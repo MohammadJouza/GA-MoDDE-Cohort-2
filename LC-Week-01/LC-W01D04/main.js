@@ -116,7 +116,7 @@ ul1.appendChild( newListItem )
 
 //
 /* 
-Order to 
+Order Todo
 
 1. Read Event Obj
 target
