@@ -166,7 +166,8 @@ colors = ("red", "green", "blue")
 r, g, b = colors
 print("3 V:", r, g, b)
 
-# for key, val in colors.items():
+# this is what we did with hte dict before
+# for key, val in stu_1.items():
 #     print(f"{key} = {val}")
 
 #             sequence start:end:step
