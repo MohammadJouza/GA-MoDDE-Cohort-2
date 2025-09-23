@@ -180,7 +180,7 @@ print(nums_3)
 short_num = nums_3[2:]
 print(short_num)
 
-print("NUM_3: ", num_3)
+print("NUMS_3: ", nums_3)
 #
 
 
