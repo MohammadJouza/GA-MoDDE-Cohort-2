@@ -81,6 +81,7 @@ print(dir(Zeeb_a))
 print("================ ")
 print(Zeeb_a.bank_name)
 
+
 class Student_5c:
     # class property
     course_name = "Python 3.0"
@@ -97,6 +98,7 @@ class Student_5c:
 
     def __display(self):  # private method
         print("This is private method.")
+
     # Instance methods
     def checkName(self):
         return self.__name
@@ -110,10 +112,12 @@ class Student_5c:
         # return cls(name,date.today().year - birth_year)
         #     Student_5c("Rama",2025-2000)
         #     Student_5c("Rama",25)
+
     # Static methods
     @staticmethod
     def just_say_bla_bla():
         print("STATIC METHOD Bla Bla")
+
 
 #           Student_5c("Rama",25)
 student_7 = Student_5c("Ahmad", 22)
@@ -134,10 +138,61 @@ print("PP:", student_8.course_name)
 
 student_7.just_say_bla_bla()
 
-print()  # 505
-print()  # 505
-print()  # 505
-print()  # 505
-print()  # 505
-print()  # 505
-print()  # 505
+
+print("================ 138 ")
+
+
+class Salary:
+    def __init__(self, pay, bonus):
+        self.pay = pay
+        self.bonus = bonus
+
+    def annual_salary(self):
+        return f"Annual salary ${(self.pay * 12) + self.bonus}"
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"STU Class : MY NAME IS {self.name}"
+
+class FullTimeEmployee(Person):
+    def __init__(self, name, age, sal_p):
+        # inheritance
+        super().__init__(name=name, age=age)
+        # Composition (HAS-A) Relationship
+        self.sal = sal_p
+        # self.name = name
+
+    def total_sal(self):
+        return self.sal.annual_salary()
+
+salary_1 = Salary(400, 50)
+salary_2 = Salary(500, 50)
+# salary_1 = { pay:400, bonus:50, annual_salary()       }
+print(167, salary_1.annual_salary())
+ali = FullTimeEmployee("Ali", 25, salary_1)
+rama = FullTimeEmployee("rama", 20, salary_2)
+# {  name:"Ali", age:25,__str__(),     sal, total_sal   }
+#          sal: { pay:400, bonus:50, annual_salary()       }
+#    Person Class                   FullTimeEmployee
+
+# print(ali)
+# print(ali.total_sal())
+
+print("Ali:", ali)  #
+print("185:", ali.sal.pay)
+
+print("190:", ali.sal.annual_salary())  #
+print("191:", ali.total_sal())  #
+print("191:", rama.total_sal())  #
+
+
+print()  #
+print()  #
+print()  #
+print()  #
+print()  #
+print()  # 55
