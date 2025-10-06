@@ -1,14 +1,7 @@
-{% extends 'base.html' %} 
-{% load static %} 
-
-{% comment %} we add this {% endcomment %}
-{% block title %} {{cat.id}} - {{ cat.name }}  {% endblock %}
-
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block title %} {{cat.id}} - {{
+cat.name }} {% endblock %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/cats/cat-detail.css' %}" />
-{% endblock %} 
-
-{% block content %}
+{% endblock %} {% block content %}
 <section class="cat-container">
   <div class="cat-img">
     <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
@@ -16,18 +9,11 @@
   <div class="cat-details">
     <h1>{{ cat.name }}</h1>
     {% if cat.age > 0 %}
-      <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
+    <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
     {% else %}
-      <h2>A {{ cat.breed }} kitten.</h2>
+    <h2>A {{ cat.breed }} kitten.</h2>
     {% endif %}
     <p>{{ cat.description }}</p>
   </div>
 </section>
 {% endblock %}
-{% comment %} 
-Lecture Understanding
-YS: 100%
-NO: 25%
-<<: 50%
->>: 75%
- {% endcomment %}
