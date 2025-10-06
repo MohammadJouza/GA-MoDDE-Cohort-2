@@ -18,14 +18,16 @@ class CatCreate(CreateView):
     #     "breed",
     # ]
 
+
 class CatUpdate(UpdateView):
     model = Cat
     # Let's disallow the renaming of a cat by excluding the name field!
-    fields = ['breed', 'description', 'age']
+    fields = ["breed", "description", "age"]
+
 
 class CatDelete(DeleteView):
     model = Cat
-    success_url = '/cats/'
+    success_url = "/cats/"
 
 
 # Define the home view function
