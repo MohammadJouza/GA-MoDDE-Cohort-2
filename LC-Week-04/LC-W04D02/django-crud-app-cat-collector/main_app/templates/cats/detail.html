@@ -15,5 +15,10 @@ cat.name }} {% endblock %} {% block head %}
     {% endif %}
     <p>{{ cat.description }}</p>
   </div>
+
+   <div class="cat-actions">
+    <a href="{% url 'cat-update' cat.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'cat-delete' cat.id %}" class="btn danger">Delete</a>
+  </div>
 </section>
 {% endblock %}

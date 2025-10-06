@@ -16,6 +16,8 @@ urlpatterns = [
     # path('/careers', views.career, name='home'),
     # !- HW 3.b Handle id for other endpoint dont have /blabla
     path('cats/create/', views.CatCreate.as_view(), name='cat-create'),
+    path('cats/<int:pk>/update/', views.CatUpdate.as_view(), name='cat-update'),
+    path('cats/<int:pk>/delete/', views.CatDelete.as_view(), name='cat-delete'),
 ]
 
 
