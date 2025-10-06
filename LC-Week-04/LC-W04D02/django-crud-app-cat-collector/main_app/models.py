@@ -15,6 +15,12 @@ class Cat(models.Model):
 # cat_1 = Cat()
 # record  Table
 # c = Cat(name='Biscuit', breed='Sphinx', description='Cuddle monster. Hairless.', age=2)
+""" 
+YS: Workflow 10
+NO: Steps 7
+<<: Materials 0
+>>: 
+ """
 
 
 """ 
@@ -42,5 +48,28 @@ Cat.objects.filter(age=0)
 Cat.objects.filter(age__gte=1)
 
 Cat.objects.order_by('-name')
+
+ """
+
+
+
+
+""" 
+GET
+STEPS to create page for creating new cat
+// - interface
+// - url 'cat/create'
+!- CatCreate
+- html page that has (form)
+!- form
+- route
+- template
+- response user
+
+==========
+POST
+- input (fill data)
+- hit the button (send POST)
+- handle (model) - database
 
  """

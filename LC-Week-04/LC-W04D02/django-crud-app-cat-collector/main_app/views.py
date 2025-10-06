@@ -2,23 +2,39 @@
 
 from django.shortcuts import render
 
-# Create your views here.
-# Import HttpResponse to send text-based responses
+# Add the following import
+from django.views.generic.edit import CreateView
+
 from django.http import HttpResponse
 from .models import Cat
+
+
+class CatCreate(CreateView):
+    model = Cat
+    fields = "__all__"
+    # fields = [
+    #     "name",
+    #     "description",
+    #     "age",
+    #     "breed",
+    # ]
+
 
 # Define the home view function
 def home(request):
     return render(request, "index.html")
 
+
 def about(request):
     return render(request, "about.html")
+
 
 def cat_index(request):
     cats = Cat.objects.all()
     return render(request, "cats/index.html", {"cats": cats})
 
-def cat_detail(request,cat_id):
+
+def cat_detail(request, cat_id):
     # !- how can I get information from the urls
     cat = Cat.objects.get(id=cat_id)
     # !- HW 3.A Handle id for other cats dont have
@@ -28,6 +44,10 @@ def cat_detail(request,cat_id):
 
 # !- HW 1- read about run the server without install all the packages
 # !- HW 2- read about RESTful API
+
+#  !- HW Read About csrf_token cross request / cross origin
+
+
 """ 
 class Cat:
     def __init__(self, name, breed, description, age):
