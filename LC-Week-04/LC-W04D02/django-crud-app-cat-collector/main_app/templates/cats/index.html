@@ -16,6 +16,8 @@ cats: [ cat:{id,name,age,etc}]
 {% endcomment %}
   {% for cat in cats %}
   <div class="card">
+    {% comment %}  cat/5,1,3/    {% endcomment %}
+    <a href="{% url 'cat-detail' cat.id %}">
     <a href="/cats/{{ cat.id }}"/>
       <div class="card-content">
         <div class="card-img-container">
