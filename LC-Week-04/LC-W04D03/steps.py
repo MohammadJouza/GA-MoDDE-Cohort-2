@@ -57,6 +57,29 @@ html confirm delete
 
  """
 
+""" 
+show Toys inside cat-details
+
+- retrieve the entire toys inside table TOYS
+- retrieve the entire toys - for the specific cat (id)
+
+
+
+cat.toys.all
+[{id,name,color}, ... ]
+
+
+cat.toys.all (id)
+cat_toy= [3,4]
+
+[{id,name,color}, ... ] (1,2,3,4)
+Toy.objects.exclude(id__in,cat_toy )
+
+
+
+ """
+
+
 
 """ 
 backend knowledge

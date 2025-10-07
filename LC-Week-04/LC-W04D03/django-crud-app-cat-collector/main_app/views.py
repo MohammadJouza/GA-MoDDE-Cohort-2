@@ -73,10 +73,14 @@ def cat_detail(request, cat_id):
     # !- how can I get information from the urls
     cat = Cat.objects.get(id=cat_id)
     # !- HW 3.A Handle id for other cats dont have
+    # toys = Toy.objects.all()  
+    toys_cat_doesnt_have = Toy.objects.exclude(id__in = cat.toys.all().values_list('id'))
+
+    # Fetch all toys
     # print("CAT_ID: ", cat_id)
     feeding_form = FeedingForm()
     return render(
-        request, "cats/detail.html", {"cat": cat, "feeding_form": feeding_form}
+        request, "cats/detail.html", {"cat": cat, "feeding_form": feeding_form, 'toys': toys_cat_doesnt_have}
     )
 
 def add_feeding(request, cat_id):
@@ -92,7 +96,11 @@ def add_feeding(request, cat_id):
         new_feeding.save()
     return redirect('cat-detail', cat_id=cat_id)
 
-
+def associate_toy(request, cat_id, toy_id):
+    # Note that you can pass a toy's id instead of the whole object
+    # Model.
+    Cat.objects.get(id=cat_id).toys.add(toy_id)
+    return redirect('cat-detail', cat_id=cat_id)
 # !- HW 1- read about run the server without install all the packages
 # !- HW 2- read about RESTful API
 
