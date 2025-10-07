@@ -38,6 +38,20 @@ response
 """
 
 
+
+
+""" 
+!- third model TOY
+
+!- come back about the post
+
+
+// !- html inside the 
+// Toy : details  + index
+html confirm delete
+"""
+
+
 """ 
 !- Extra HW - can I show the date like this 07/10/2025 instead of Oct 7, 2025 in HTML
 

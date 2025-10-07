@@ -3,9 +3,11 @@
 from django.shortcuts import render,redirect
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView 
+# add these 
 
 from django.http import HttpResponse
-from .models import Cat
+from .models import Cat,Toy
 
 from .forms import FeedingForm
 
@@ -31,8 +33,29 @@ class CatDelete(DeleteView):
     model = Cat
     success_url = "/cats/"
 
-
+class ToyCreate(CreateView):
+    model = Toy
+    fields = '__all__'
 # Define the home view function
+
+
+class ToyList(ListView):
+    model = Toy
+    # {name: mouse, color: 'green'}
+    # border-color:green
+
+class ToyDetail(DetailView):
+    model = Toy
+
+class ToyUpdate(UpdateView):
+    model = Toy
+    fields = ['name', 'color']
+
+class ToyDelete(DeleteView):
+    model = Toy
+    success_url = '/toys/'
+
+
 def home(request):
     return render(request, "index.html")
 
