@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'images/splash.svg' %}"
+    />
+    <title>{% block title %} Cat Collector {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    <header>
+      {% comment %} NOTE: I switched between the logo with the header img I
+      correct it here {% endcomment %}
+      <div class="header-logo-container">
+        <a href="/">
+          <img
+            src="{% static 'images/header-logo.svg' %}"
+            alt="The Cat Collector Logo"
+          />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          {% comment %}
+          <li><a href="/">Home</a></li>
+          <li><a href="/cats">Cats</a></li>
+          <li><a href="/about">About</a></li>
+          {% endcomment %}
+          <li><a href="{% url 'home' %}">Home</a></li>
+
+          <li><a href="{% url 'cat-index' %}"> All Cats</a></li>
+          <!-- Add new link -->
+          <li><a href="{% url 'toy-index' %}">All Toys</a></li>
+          <li><a href="{% url 'cat-create' %}">Add a Cat</a></li>
+
+          <li><a href="{% url 'toy-create' %}">Add a Toy</a></li>
+
+          <li><a href="{% url 'about' %}"> About</a></li>
+        </ul>
+      </nav>
+      {% comment %} !- HW hide the template / path we are inside ex hide about
+      while we are inside /about {% endcomment %}
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html>
