@@ -4,6 +4,7 @@ from django.urls import reverse
 # Create your models here.
 # models = tables
 
+
 class Cat(models.Model):
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100)
@@ -23,7 +24,7 @@ MEALS = (("B", "Breakfast"), ("L", "Lunch"), ("D", "Dinner"))
 
 
 class Feeding(models.Model):
-    date = models.DateField()
+    date = models.DateField("FEEDING DATE")
     meal = models.CharField(
         max_length=1,
         # add the 'choices' field option
@@ -38,13 +39,17 @@ class Feeding(models.Model):
     def __str__(self):
         # Nice method for obtaining the friendly value of a Field.choice
         return f"{self.get_meal_display()} on {self.date}"
+    
+    # Define the default order of feedings
+    class Meta:
+        ordering = ['-date'] 
+        # This line makes the newest feedings appear first
+
 
 
 # cat_1 = Cat()
 # record  Table
 # c = Cat(name='Biscuit', breed='Sphinx', description='Cuddle monster. Hairless.', age=2)
-
-
 """ 
 YS: Workflow 10
 NO: Steps 7
