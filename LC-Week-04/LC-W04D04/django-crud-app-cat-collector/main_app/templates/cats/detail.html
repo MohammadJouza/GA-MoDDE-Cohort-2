@@ -7,7 +7,8 @@ cat.name }} {% endblock %} {% block head %}
     <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
   </div>
   <div class="cat-details">
-    <h1>{{ cat.name }}</h1>
+    <h3>U:{{request.user.id}} - {{request.user}}</h3>
+    <h1>U:{{ cat.user_id }} - {{ cat.name }}</h1>
     {% if cat.age > 0 %}
     <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
     {% else %}
@@ -16,10 +17,12 @@ cat.name }} {% endblock %} {% block head %}
     <p>{{ cat.description }}</p>
   </div>
 
+  {% if cat.user == request.user %}
   <div class="cat-actions">
     <a href="{% url 'cat-update' cat.id %}" class="btn warn">Edit</a>
     <a href="{% url 'cat-delete' cat.id %}" class="btn danger">Delete</a>
   </div>
+  {% endif %}
 </section>
 <!-- Existing cat-container above -->
 

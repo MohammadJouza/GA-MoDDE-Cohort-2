@@ -24,5 +24,7 @@ urlpatterns = [
     path('', include('main_app.urls')), 
     # website.com/
     # Mounts main_app's routes at the root URL
+     # include the built-in auth urls for the built-in views
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 # urls.py  - ROOT

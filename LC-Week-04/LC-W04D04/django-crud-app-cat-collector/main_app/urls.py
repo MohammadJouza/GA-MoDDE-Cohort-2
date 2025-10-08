@@ -8,7 +8,9 @@ from . import views
 urlpatterns = [
     # !- HW Extra SSOT - Single source of truth
     # Routes will be added here
-    path("", views.home, name="home"),
+    # path("", views.home, name="home"),
+    # realte to func called  home
+    path("", views.Home.as_view(), name="home"),
     path("cats/", views.cat_index, name="cat-index"),
     path("about/", views.about, name="about"),
     # endpoint  cats/1 => cat_id:1    cats/2 => cat_id:2
@@ -20,20 +22,28 @@ urlpatterns = [
     path("cats/<int:pk>/delete/", views.CatDelete.as_view(), name="cat-delete"),
     # Existing URL patterns above
     path("cats/<int:cat_id>/add-feeding/", views.add_feeding, name="add-feeding"),
-
     path("toys/create/", views.ToyCreate.as_view(), name="toy-create"),
     path("toys/<int:pk>/", views.ToyDetail.as_view(), name="toy-detail"),
     path("toys/", views.ToyList.as_view(), name="toy-index"),
+    path("toys/<int:pk>/update/", views.ToyUpdate.as_view(), name="toy-update"),
+    path("toys/<int:pk>/delete/", views.ToyDelete.as_view(), name="toy-delete"),
+    path(
+        "cats/<int:cat_id>/associate-toy/<int:toy_id>/",
+        views.associate_toy,
+        name="associate-toy",
+    ),
+    path(
+        "cats/<int:cat_id>/remove-toy/<int:toy_id>/",
+        views.remove_toy,
+        name="remove-toy",
+    ),
 
-     path('toys/<int:pk>/update/', views.ToyUpdate.as_view(), name='toy-update'),
-    path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toy-delete'),
-
-    path('cats/<int:cat_id>/associate-toy/<int:toy_id>/', views.associate_toy, name='associate-toy'),
-    path('cats/<int:cat_id>/remove-toy/<int:toy_id>/', views.remove_toy, name='remove-toy'),
-
-
+    path('accounts/signup/', views.signup, name='signup'),
 ]
-
+"""  
+if movie.user == request.user:
+    show edit/delete buttons
+"""
 
 # !- HW DJ- CBV read the links in the Materials
 # STEPS:

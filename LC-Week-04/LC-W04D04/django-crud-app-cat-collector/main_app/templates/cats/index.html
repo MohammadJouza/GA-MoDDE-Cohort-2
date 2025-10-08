@@ -26,7 +26,7 @@ cat/5,1,3/ {% endcomment %}
           />
         </div>
 
-        <h2 class="card-title">{{ cat.name }}</h2>
+        <h2 class="card-title">U:{{ cat.user_id }} | ID: {{ cat.id }} - {{ cat.name }}</h2>
         {% if cat.age > 0 %}
         <p>A {{ cat.age }} YEAR OLD {{ cat.breed }}</p>
         {% else %}

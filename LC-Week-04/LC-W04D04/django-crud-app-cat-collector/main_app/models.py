@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 # Create your models here.
 # models = tables
 
@@ -23,6 +23,9 @@ class Cat(models.Model):
     age = models.IntegerField()
     # Add the M:M relationship
     toys = models.ManyToManyField(Toy)
+    user= models.ForeignKey(User, on_delete=models.CASCADE)
+    # feedng and cat 1:M
+    # cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
